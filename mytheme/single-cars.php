@@ -11,17 +11,14 @@
                     <?php wp_link_pages();?>
                 </div>
                 <div class="col-lg-6">
+                <?php get_template_part(); ?>
                     <ul>
-                        <?php if(get_post_meta($post->ID, 'Colour', true)):?>
-                            <li>
-                                Colour: <?php echo get_post_meta($post->ID, 'Colour', true);?>
-                            </li>
-                        <?php endif;?>
-                        <?php if(get_post_meta($post->ID, 'Registration', true)):?>
-                            <li>
-                                Registration: <?php echo get_post_meta($post->ID, 'Registration', true);?>
-                            </li>
-                        <?php endif;?>
+                        <li>
+                            Colour: <?php the_field('colour');?>
+                        </li>
+                        <li>
+                            Registration: <?php the_field('registration');?>
+                        </li>
                     </ul> 
                 </div>
             </div>
